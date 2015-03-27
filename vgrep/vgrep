@@ -12,7 +12,7 @@ from optparse import OptionParser
 from subprocess import Popen, PIPE, STDOUT
 
 
-CACHE = "/tmp/.vrgrep_cache"
+CACHE = "/tmp/.vgrep_cache"
 EDITOR = os.getenv("EDITOR", "vim")
 
 
@@ -20,7 +20,6 @@ class SLOC(object):
     """Represents a SLOC."""
     def __init__(self, string):
         object.__init__(self)
-        print string
         self.file = SLOC.parse_file(string)
         self.line = SLOC.parse_line(string)
         self.cont = SLOC.parse_cont(string).lstrip()
@@ -136,11 +135,11 @@ def print_slocs(slocs):
             max_line = len(sloc.line) + 1
 
     if len("Index ") > max_indx:
-        max_indx = len("Index ")
+        max_indx = len("Index ") + 1
     if len("Source File ") > max_file:
-        max_file = len("Source File ")
+        max_file = len("Source File ") + 1
     if len("Source Line ") > max_indx:
-        max_line = len("Source Line ")
+        max_line = len("Source Line ") + 1
 
     out = []
     out.append(yellow("Index " + " " * (max_indx - len("Index "))))
