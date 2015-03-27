@@ -3,6 +3,10 @@
 """This module is a reimpementation of the ancient cgvg perl scripts.  vgrep
 needs to be called in a Git tree."""
 
+# (c) 2015 Valentin Rothberg <valentinrothberg@gmail.com>
+#
+# Licensed under the terms of the GNU GPL License version 3
+
 import os
 import re
 import sys
