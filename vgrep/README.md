@@ -14,6 +14,7 @@ you can re-open your previous call by simply calling vgrep without arguments.
 
 Note that vgrep pipes the output to 'less' for more than 100 indexes.
 
+```
 [~/linux/kernel/irq]$ vgrep request_irq
 Index  Source File  Source Line  Content
 
@@ -22,10 +23,13 @@ Index  Source File  Source Line  Content
 2      manage.c     1572         ret = request_irq(irq, handler, flags, name, dev_id);
 3      manage.c     483          KERN_ERR "enable_irq before setup/request_irq: irq %u\n", irq))
 4      manage.c     559          int can_request_irq(unsigned int irq, unsigned long irqflags)
+```
 
 ###Show indexed location
 To visit a specific location we can use '--show' and the corresponding index.
 vgrep will then open the location with the editor set in your enviroment.  If
 no editor is set, vgrep defaults to vim.
 
+```
 [~/linux/kernel/irq]$ vgrep --show 3
+```
